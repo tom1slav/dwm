@@ -3,24 +3,46 @@
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 15;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 35;       /* snap pixel */
+
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+
+static const char *fonts[]          = {
+	"JetBrainsMono Nerd Font:size=14",
+	"Noto Sans CJK JP:size=14:style=heavy",
+};
+
+/* duskfox */
+static const char drkblk[] = "#393552";
+static const char drkred[] = "#eb6f92";
+static const char drkgrn[] = "#a3be8c";
+static const char drkyel[] = "#f6c177";
+static const char drkblu[] = "#569fba";
+static const char drkmag[] = "#c4a7e7";
+static const char drkcya[] = "#9ccfd8";
+static const char drkwht[] = "#e0def4";
+
+static const char lhtblk[] = "#47407d";
+static const char lhtred[] = "#f083a2";
+static const char lhtgrn[] = "#b1d196";
+static const char lhtyel[] = "#f9cb8c";
+static const char lhtblu[] = "#65b1cd";
+static const char lhtmag[] = "#ccb1ed";
+static const char lhtcya[] = "#a6dae3";
+static const char lhtwht[] = "#e2e0f7";
+
+static const char frgrnd[] = "#e0def4";
+static const char bkgrnd[] = "#232136";
+
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/*               fg      bg      border   */
+	[SchemeNorm] = { frgrnd, bkgrnd, lhtblk },
+	[SchemeSel]  = { bkgrnd, drkmag, drkred },
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "一", "二", "三", "四", "五" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -35,7 +57,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
@@ -57,7 +79,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
