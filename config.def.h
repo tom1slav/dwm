@@ -38,9 +38,14 @@ static const char frgrnd[] = "#e0def4";
 static const char bkgrnd[] = "#232136";
 
 static const char *colors[][3]      = {
-	/*               fg      bg      border   */
-	[SchemeNorm] = { frgrnd, bkgrnd, lhtblk },
-	[SchemeSel]  = { bkgrnd, drkmag, drkred },
+	/*		    fg      bg      border   */
+	[SchemeNorm]	= { frgrnd, bkgrnd, lhtblk },
+	[SchemeSel]	= { bkgrnd, drkmag, drkred },
+
+	[SchemeRed]	= { bkgrnd, lhtred, drkred },
+	[SchemeYel]	= { bkgrnd, lhtyel, drkyel },
+	[SchemeBlu]	= { bkgrnd, lhtblu, drkblu },
+	[SchemeGrn]	= { bkgrnd, lhtgrn, drkgrn },
 };
 
 /* tagging */
